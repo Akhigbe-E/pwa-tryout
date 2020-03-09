@@ -12,7 +12,12 @@ export const setSearchField = text => ({
 
 export const requestRobots = () => dispatch => {
   dispatch({ type: REQUEST_ROBOTS_PENDING });
-  fetch("https://jsonplaceholder.typicode.com/users")
+  fetch("https://jsonplaceholder.typicode.com/users", {
+    mode: "cors"
+    // headers: {
+    //   "Access-Control-Allow-Origin": "https://jsonplaceholder.typicode.com"
+    // }
+  })
     .then(res => res.json())
     .then(res => dispatch({ type: REQUEST_ROBOTS_SUCCESS, payload: res }))
     .catch(err => dispatch({ type: REQUEST_ROBOTS_ERROR, payload: err }));
