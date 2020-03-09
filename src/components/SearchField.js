@@ -8,7 +8,7 @@ const SearchField = ({ sendSearchInput }) => {
   });
 
   return (
-    <div>
+    <label>
       <input
         type="search"
         placeholder="Search Robot"
@@ -17,7 +17,7 @@ const SearchField = ({ sendSearchInput }) => {
           setsearchInput(e.target.value);
         }}
       />
-    </div>
+    </label>
   );
 };
 
