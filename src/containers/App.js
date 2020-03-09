@@ -6,6 +6,7 @@ import { CardList } from "../components/CardList";
 import SearchField from "../components/SearchField";
 
 import { setSearchField, requestRobots } from "../actions";
+import { Header } from "../components/Header";
 
 const mapStateToProps = state => {
   return {
@@ -24,10 +25,16 @@ const mapDispatchToProps = dispatch => {
 };
 
 const App = props => {
-  const { searchFieldInput, handleSearchInput, robots, pending } = props;
+  const {
+    searchFieldInput,
+    handleSearchInput,
+    robots,
+    pending,
+    onRequestRobots
+  } = props;
 
   useEffect(() => {
-    props.onRequestRobots();
+    onRequestRobots();
   }, []);
 
   // const handleSearchInput = searchInput => {
@@ -41,7 +48,7 @@ const App = props => {
 
   return !pending ? (
     <div className="tc">
-      <h1>Robo Friends</h1>
+      <Header title="Robo Friends" />
       <SearchField sendSearchInput={handleSearchInput} />
       <CardList robots={filteredRobots} />
     </div>
