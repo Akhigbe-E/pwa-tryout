@@ -10,7 +10,7 @@ export const setSearchField = text => ({
   payload: text
 });
 let myHeaders = new Headers({
-  "Access-Control-Allow-Origin": "https://jsonplaceholder.typicode.com"
+  "Access-Control-Allow-Origin": "https://jsonplaceholder.typicode.com/users"
 });
 export const requestRobots = () => dispatch => {
   dispatch({ type: REQUEST_ROBOTS_PENDING });

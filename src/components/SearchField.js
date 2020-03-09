@@ -8,16 +8,18 @@ const SearchField = ({ sendSearchInput }) => {
   });
 
   return (
-    <label>
-      <input
-        type="search"
-        placeholder="Search Robot"
-        value={searchInput}
-        onChange={e => {
-          setsearchInput(e.target.value);
-        }}
-      />
-    </label>
+    <div>
+      <label>
+        <input
+          type="search"
+          placeholder="Search Robot"
+          value={searchInput}
+          onChange={e => {
+            setsearchInput(e.target.value);
+          }}
+        />
+      </label>
+    </div>
   );
 };
 
