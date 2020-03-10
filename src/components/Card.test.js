@@ -4,7 +4,7 @@ import { shallow } from "enzyme";
 import Card from "./Card";
 
 describe("Card.js", () => {
-  it("length of shallow is 1", () => {
-    expect(shallow(<Card />).length).toBe(1);
+  it("card matches snapshot", () => {
+    expect(shallow(<Card />)).toMatchSnapshot();
   });
 });
