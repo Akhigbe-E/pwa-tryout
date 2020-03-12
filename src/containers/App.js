@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { connect } from "react-redux";
 
-import { CardList } from "../components/CardList";
-import SearchField from "../components/SearchField";
-
 import { setSearchField, requestRobots } from "../actions";
-import { Header } from "../components/Header";
+import MainPage from "../components/MainPage";
 
 const mapStateToProps = state => {
   return {
@@ -25,36 +22,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 const App = props => {
-  const {
-    searchFieldInput,
-    handleSearchInput,
-    robots,
-    pending,
-    onRequestRobots
-  } = props;
-
-  useEffect(() => {
-    onRequestRobots();
-  }, []);
-
-  // const handleSearchInput = searchInput => {
-  //   setsearchFieldInput(searchInput);
-  // };
-  const filteredRobots = robots.filter(robot =>
-    robot.name
-      .toLocaleLowerCase()
-      .includes(searchFieldInput.toLocaleLowerCase())
-  );
-
-  return !pending ? (
-    <div className="tc">
-      <Header title="Robo Friends" />
-      <SearchField sendSearchInput={handleSearchInput} />
-      <CardList robots={filteredRobots} />
-    </div>
-  ) : (
-    <h1 className="tc">Loading..</h1>
-  );
+  return <MainPage {...props} />;
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

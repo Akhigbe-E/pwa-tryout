@@ -9,6 +9,7 @@ export const setSearchField = text => ({
   type: CHANGE_SEARCH_FIELD,
   payload: text
 });
+
 let myHeaders = new Headers({
   "Access-Control-Allow-Origin": "https://jsonplaceholder.typicode.com/users"
 });

@@ -13,13 +13,13 @@ import * as serviceWorker from "./serviceWorker";
 import "tachyons";
 import App from "./containers/App";
 
-const logger = createLogger();
+// const logger = createLogger();
 
 const rootReducer = combineReducers({ searchRobots, requestRobots });
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunkMiddleware, logger)
+  applyMiddleware(thunkMiddleware /*logger*/)
 );
 
 ReactDOM.render(
